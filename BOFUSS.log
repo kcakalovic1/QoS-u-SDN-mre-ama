@@ -1,0 +1,207 @@
+0s [vlog|INFO] opened log file BOFUSS.log
+0s [dp|DBG] Datapath "1" sending: port_stat{reas=add, desc={no="1", hw_addr="00:00:00:00:00:02", name="Port 1", config="0x0", state="0x4", curr="0x2808", adv="0x2808", supp="0x2808", peer="0x0", curr_spd="102400kbps", max_spd="102400kbps"}}
+0s [dp|DBG] Datapath "1" sending: port_stat{reas=add, desc={no="2", hw_addr="00:00:00:00:00:04", name="Port 2", config="0x0", state="0x4", curr="0x2808", adv="0x2808", supp="0x2808", peer="0x0", curr_spd="102400kbps", max_spd="102400kbps"}}
+0s [dp|DBG] Datapath "1" sending: hello
+0s [dp_ctrl|DBG] Datapath "1" received control msg: hello
+0s [dp_ctrl|DBG] Datapath "1" received control msg: feat_req
+0s [dp|DBG] Datapath "1" sending: feat_repl{dpid="0x0000000000000001", buffs="256", tabs="64", aux_id="0", caps="0x4f"]}
+0s [dp_ctrl|DBG] Datapath "1" received control msg: barr_req
+0s [dp|DBG] Datapath "1" sending: barr_repl
+0s [dp_ctrl|DBG] Datapath "1" received control msg: flow_mod{table="0", cmd="add", cookie="0x0", mask="0x0", idle="0", hard="0", prio="0", buf="none", port="any", group="any", flags="0x0", match=oxm{all match}, insts=[apply{acts=[out{port="ctrl", mlen="128"}]}]}
+0s [dp_ctrl|DBG] Datapath "1" received control msg: set_conf{conf={flags="0x0", mlen="128"}}
+1s [pipeline|DBG] Datapath "1" processing packet: pkt{in="1", actset=[], pktout="0", ogrp="any", oprt="any", buffer="none", ns3pktid="1", changes="0", clone="0", std={proto={eth,arp}, match=oxm{in_port="1", metadata="0x0", eth_dst="ff:ff:ff:ff:ff:ff", eth_src="00:00:00:00:00:01", eth_type="0x806", arp_op="0x1", arp_spa="10.1.1.1", arp_tpa="10.1.1.2", arp_sha="00:00:00:00:00:01", arp_tha="ff:ff:ff:ff:ff:ff", tunnel_id="0x0"}"}}
+1s [pipeline|DBG] Datapath "1" trying table 0.
+1s [pipeline|DBG] Datapath "1" searching table entry for packet match: oxm{in_port="1", metadata="0x0", eth_dst="ff:ff:ff:ff:ff:ff", eth_src="00:00:00:00:00:01", eth_type="0x806", arp_op="0x1", arp_spa="10.1.1.1", arp_tpa="10.1.1.2", arp_sha="00:00:00:00:00:01", arp_tha="ff:ff:ff:ff:ff:ff", tunnel_id="0x0"}.
+1s [pipeline|DBG] Datapath "1" found matching entry: {table="0", match="oxm{all match}", dur_s="0", dur_ns="0", prio="0", idle_to="0", hard_to="0", cookie="0x0", pkt_cnt="1", byte_cnt="64", insts=[apply{acts=[out{port="ctrl", mlen="128"}]}]}.
+1s [dp_acts|DBG] Executing action list.
+1s [dp_acts|DBG] executing action out{port="ctrl", mlen="128"}.
+1s [dp_acts|DBG] action result: pkt{in="1", actset=[], pktout="0", ogrp="any", oprt="ctrl", buffer="none", ns3pktid="1", changes="0", clone="0", std={proto={eth,arp}, match=oxm{in_port="1", metadata="0x0", eth_dst="ff:ff:ff:ff:ff:ff", eth_src="00:00:00:00:00:01", eth_type="0x806", arp_op="0x1", arp_spa="10.1.1.1", arp_tpa="10.1.1.2", arp_sha="00:00:00:00:00:01", arp_tha="ff:ff:ff:ff:ff:ff", tunnel_id="0x0"}"}}
+1s [dp_acts|DBG] Port action; sending to port (4294967293).
+1s [dp|DBG] Datapath "1" sending: pkt_in{buffer="0", tlen="64", reas="no_match", table="0", dlen="64"}
+1s [dp_ctrl|DBG] Datapath "1" received control msg: flow_mod{table="0", cmd="add", cookie="0x0", mask="0x0", idle="10", hard="0", prio="101", buf="none", port="any", group="any", flags="0x1", match=oxm{eth_dst="00:00:00:00:00:01"}, insts=[apply{acts=[out{port="1"}]}]}
+1s [dp_ctrl|DBG] Datapath "1" received control msg: pkt_out{buffer="0", port="1", actions=[out{port="flood"}]}
+1s [dp_acts|DBG] Executing action list.
+1s [dp_acts|DBG] executing action out{port="flood"}.
+1s [dp_acts|DBG] action result: pkt{in="1", actset=[], pktout="0", ogrp="any", oprt="flood", buffer="none", ns3pktid="1", changes="0", clone="0", std={proto={eth,arp}, match=oxm{in_port="1", metadata="0x0", eth_dst="ff:ff:ff:ff:ff:ff", eth_src="00:00:00:00:00:01", eth_type="0x806", arp_op="0x1", arp_spa="10.1.1.1", arp_tpa="10.1.1.2", arp_sha="00:00:00:00:00:01", arp_tha="ff:ff:ff:ff:ff:ff", tunnel_id="0x0"}"}}
+1s [dp_acts|DBG] Port action; sending to port (4294967291).
+1s [pipeline|DBG] Datapath "1" processing packet: pkt{in="2", actset=[], pktout="0", ogrp="any", oprt="any", buffer="none", ns3pktid="2", changes="0", clone="0", std={proto={eth,arp}, match=oxm{in_port="2", metadata="0x0", eth_dst="00:00:00:00:00:01", eth_src="00:00:00:00:00:03", eth_type="0x806", arp_op="0x2", arp_spa="10.1.1.2", arp_tpa="10.1.1.1", arp_sha="00:00:00:00:00:03", arp_tha="00:00:00:00:00:01", tunnel_id="0x0"}"}}
+1s [pipeline|DBG] Datapath "1" trying table 0.
+1s [pipeline|DBG] Datapath "1" searching table entry for packet match: oxm{in_port="2", metadata="0x0", eth_dst="00:00:00:00:00:01", eth_src="00:00:00:00:00:03", eth_type="0x806", arp_op="0x2", arp_spa="10.1.1.2", arp_tpa="10.1.1.1", arp_sha="00:00:00:00:00:03", arp_tha="00:00:00:00:00:01", tunnel_id="0x0"}.
+1s [pipeline|DBG] Datapath "1" found matching entry: {table="0", match="oxm{eth_dst="00:00:00:00:00:01"}", dur_s="0", dur_ns="0", prio="101", idle_to="10", hard_to="0", cookie="0x0", pkt_cnt="1", byte_cnt="64", insts=[apply{acts=[out{port="1"}]}]}.
+1s [dp_acts|DBG] Executing action list.
+1s [dp_acts|DBG] executing action out{port="1"}.
+1s [dp_acts|DBG] action result: pkt{in="2", actset=[], pktout="0", ogrp="any", oprt="1", buffer="none", ns3pktid="2", changes="0", clone="0", std={proto={eth,arp}, match=oxm{in_port="2", metadata="0x0", eth_dst="00:00:00:00:00:01", eth_src="00:00:00:00:00:03", eth_type="0x806", arp_op="0x2", arp_spa="10.1.1.2", arp_tpa="10.1.1.1", arp_sha="00:00:00:00:00:03", arp_tha="00:00:00:00:00:01", tunnel_id="0x0"}"}}
+1s [dp_acts|DBG] Port action; sending to port (1).
+1s [pipeline|DBG] Datapath "1" processing packet: pkt{in="1", actset=[], pktout="0", ogrp="any", oprt="any", buffer="none", ns3pktid="3", changes="0", clone="0", std={proto={eth,ipv4,icmp}, match=oxm{in_port="1", metadata="0x0", eth_dst="00:00:00:00:00:03", eth_src="00:00:00:00:00:01", eth_type="0x800", ip_dscp="0", ip_ecn="0", ipv4_src="10.1.1.1", ipv4_dst="10.1.1.2", ip_proto="1", icmpv4_type= "8", icmpv4_code="0", tunnel_id="0x0"}"}}
+1s [pipeline|DBG] Datapath "1" trying table 0.
+1s [pipeline|DBG] Datapath "1" searching table entry for packet match: oxm{in_port="1", metadata="0x0", eth_dst="00:00:00:00:00:03", eth_src="00:00:00:00:00:01", eth_type="0x800", ip_dscp="0", ip_ecn="0", ipv4_src="10.1.1.1", ipv4_dst="10.1.1.2", ip_proto="1", icmpv4_type= "8", icmpv4_code="0", tunnel_id="0x0"}.
+1s [pipeline|DBG] Datapath "1" found matching entry: {table="0", match="oxm{all match}", dur_s="0", dur_ns="0", prio="0", idle_to="0", hard_to="0", cookie="0x0", pkt_cnt="2", byte_cnt="166", insts=[apply{acts=[out{port="ctrl", mlen="128"}]}]}.
+1s [dp_acts|DBG] Executing action list.
+1s [dp_acts|DBG] executing action out{port="ctrl", mlen="128"}.
+1s [dp_acts|DBG] action result: pkt{in="1", actset=[], pktout="0", ogrp="any", oprt="ctrl", buffer="none", ns3pktid="3", changes="0", clone="0", std={proto={eth,ipv4,icmp}, match=oxm{in_port="1", metadata="0x0", eth_dst="00:00:00:00:00:03", eth_src="00:00:00:00:00:01", eth_type="0x800", ip_dscp="0", ip_ecn="0", ipv4_src="10.1.1.1", ipv4_dst="10.1.1.2", ip_proto="1", icmpv4_type= "8", icmpv4_code="0", tunnel_id="0x0"}"}}
+1s [dp_acts|DBG] Port action; sending to port (4294967293).
+1s [dp|DBG] Datapath "1" sending: pkt_in{buffer="1", tlen="102", reas="no_match", table="0", dlen="102"}
+1s [dp_ctrl|DBG] Datapath "1" received control msg: pkt_out{buffer="1", port="1", actions=[out{port="flood"}]}
+1s [dp_acts|DBG] Executing action list.
+1s [dp_acts|DBG] executing action out{port="flood"}.
+1s [dp_acts|DBG] action result: pkt{in="1", actset=[], pktout="0", ogrp="any", oprt="flood", buffer="none", ns3pktid="3", changes="0", clone="0", std={proto={eth,ipv4,icmp}, match=oxm{in_port="1", metadata="0x0", eth_dst="00:00:00:00:00:03", eth_src="00:00:00:00:00:01", eth_type="0x800", ip_dscp="0", ip_ecn="0", ipv4_src="10.1.1.1", ipv4_dst="10.1.1.2", ip_proto="1", icmpv4_type= "8", icmpv4_code="0", tunnel_id="0x0"}"}}
+1s [dp_acts|DBG] Port action; sending to port (4294967291).
+1s [pipeline|DBG] Datapath "1" processing packet: pkt{in="2", actset=[], pktout="0", ogrp="any", oprt="any", buffer="none", ns3pktid="4", changes="0", clone="0", std={proto={eth,arp}, match=oxm{in_port="2", metadata="0x0", eth_dst="ff:ff:ff:ff:ff:ff", eth_src="00:00:00:00:00:03", eth_type="0x806", arp_op="0x1", arp_spa="10.1.1.2", arp_tpa="10.1.1.1", arp_sha="00:00:00:00:00:03", arp_tha="ff:ff:ff:ff:ff:ff", tunnel_id="0x0"}"}}
+1s [pipeline|DBG] Datapath "1" trying table 0.
+1s [pipeline|DBG] Datapath "1" searching table entry for packet match: oxm{in_port="2", metadata="0x0", eth_dst="ff:ff:ff:ff:ff:ff", eth_src="00:00:00:00:00:03", eth_type="0x806", arp_op="0x1", arp_spa="10.1.1.2", arp_tpa="10.1.1.1", arp_sha="00:00:00:00:00:03", arp_tha="ff:ff:ff:ff:ff:ff", tunnel_id="0x0"}.
+1s [pipeline|DBG] Datapath "1" found matching entry: {table="0", match="oxm{all match}", dur_s="0", dur_ns="0", prio="0", idle_to="0", hard_to="0", cookie="0x0", pkt_cnt="3", byte_cnt="230", insts=[apply{acts=[out{port="ctrl", mlen="128"}]}]}.
+1s [dp_acts|DBG] Executing action list.
+1s [dp_acts|DBG] executing action out{port="ctrl", mlen="128"}.
+1s [dp_acts|DBG] action result: pkt{in="2", actset=[], pktout="0", ogrp="any", oprt="ctrl", buffer="none", ns3pktid="4", changes="0", clone="0", std={proto={eth,arp}, match=oxm{in_port="2", metadata="0x0", eth_dst="ff:ff:ff:ff:ff:ff", eth_src="00:00:00:00:00:03", eth_type="0x806", arp_op="0x1", arp_spa="10.1.1.2", arp_tpa="10.1.1.1", arp_sha="00:00:00:00:00:03", arp_tha="ff:ff:ff:ff:ff:ff", tunnel_id="0x0"}"}}
+1s [dp_acts|DBG] Port action; sending to port (4294967293).
+1s [dp|DBG] Datapath "1" sending: pkt_in{buffer="2", tlen="64", reas="no_match", table="0", dlen="64"}
+1s [dp_ctrl|DBG] Datapath "1" received control msg: flow_mod{table="0", cmd="add", cookie="0x0", mask="0x0", idle="10", hard="0", prio="102", buf="none", port="any", group="any", flags="0x1", match=oxm{eth_dst="00:00:00:00:00:03"}, insts=[apply{acts=[out{port="2"}]}]}
+1s [dp_ctrl|DBG] Datapath "1" received control msg: pkt_out{buffer="2", port="2", actions=[out{port="flood"}]}
+1s [dp_acts|DBG] Executing action list.
+1s [dp_acts|DBG] executing action out{port="flood"}.
+1s [dp_acts|DBG] action result: pkt{in="2", actset=[], pktout="0", ogrp="any", oprt="flood", buffer="none", ns3pktid="4", changes="0", clone="0", std={proto={eth,arp}, match=oxm{in_port="2", metadata="0x0", eth_dst="ff:ff:ff:ff:ff:ff", eth_src="00:00:00:00:00:03", eth_type="0x806", arp_op="0x1", arp_spa="10.1.1.2", arp_tpa="10.1.1.1", arp_sha="00:00:00:00:00:03", arp_tha="ff:ff:ff:ff:ff:ff", tunnel_id="0x0"}"}}
+1s [dp_acts|DBG] Port action; sending to port (4294967291).
+1s [pipeline|DBG] Datapath "1" processing packet: pkt{in="1", actset=[], pktout="0", ogrp="any", oprt="any", buffer="none", ns3pktid="5", changes="0", clone="0", std={proto={eth,arp}, match=oxm{in_port="1", metadata="0x0", eth_dst="00:00:00:00:00:03", eth_src="00:00:00:00:00:01", eth_type="0x806", arp_op="0x2", arp_spa="10.1.1.1", arp_tpa="10.1.1.2", arp_sha="00:00:00:00:00:01", arp_tha="00:00:00:00:00:03", tunnel_id="0x0"}"}}
+1s [pipeline|DBG] Datapath "1" trying table 0.
+1s [pipeline|DBG] Datapath "1" searching table entry for packet match: oxm{in_port="1", metadata="0x0", eth_dst="00:00:00:00:00:03", eth_src="00:00:00:00:00:01", eth_type="0x806", arp_op="0x2", arp_spa="10.1.1.1", arp_tpa="10.1.1.2", arp_sha="00:00:00:00:00:01", arp_tha="00:00:00:00:00:03", tunnel_id="0x0"}.
+1s [pipeline|DBG] Datapath "1" found matching entry: {table="0", match="oxm{eth_dst="00:00:00:00:00:03"}", dur_s="0", dur_ns="0", prio="102", idle_to="10", hard_to="0", cookie="0x0", pkt_cnt="1", byte_cnt="64", insts=[apply{acts=[out{port="2"}]}]}.
+1s [dp_acts|DBG] Executing action list.
+1s [dp_acts|DBG] executing action out{port="2"}.
+1s [dp_acts|DBG] action result: pkt{in="1", actset=[], pktout="0", ogrp="any", oprt="2", buffer="none", ns3pktid="5", changes="0", clone="0", std={proto={eth,arp}, match=oxm{in_port="1", metadata="0x0", eth_dst="00:00:00:00:00:03", eth_src="00:00:00:00:00:01", eth_type="0x806", arp_op="0x2", arp_spa="10.1.1.1", arp_tpa="10.1.1.2", arp_sha="00:00:00:00:00:01", arp_tha="00:00:00:00:00:03", tunnel_id="0x0"}"}}
+1s [dp_acts|DBG] Port action; sending to port (2).
+1s [pipeline|DBG] Datapath "1" processing packet: pkt{in="2", actset=[], pktout="0", ogrp="any", oprt="any", buffer="none", ns3pktid="6", changes="0", clone="0", std={proto={eth,ipv4,icmp}, match=oxm{in_port="2", metadata="0x0", eth_dst="00:00:00:00:00:01", eth_src="00:00:00:00:00:03", eth_type="0x800", ip_dscp="0", ip_ecn="0", ipv4_src="10.1.1.2", ipv4_dst="10.1.1.1", ip_proto="1", icmpv4_type= "0", icmpv4_code="0", tunnel_id="0x0"}"}}
+1s [pipeline|DBG] Datapath "1" trying table 0.
+1s [pipeline|DBG] Datapath "1" searching table entry for packet match: oxm{in_port="2", metadata="0x0", eth_dst="00:00:00:00:00:01", eth_src="00:00:00:00:00:03", eth_type="0x800", ip_dscp="0", ip_ecn="0", ipv4_src="10.1.1.2", ipv4_dst="10.1.1.1", ip_proto="1", icmpv4_type= "0", icmpv4_code="0", tunnel_id="0x0"}.
+1s [pipeline|DBG] Datapath "1" found matching entry: {table="0", match="oxm{eth_dst="00:00:00:00:00:01"}", dur_s="0", dur_ns="0", prio="101", idle_to="10", hard_to="0", cookie="0x0", pkt_cnt="2", byte_cnt="166", insts=[apply{acts=[out{port="1"}]}]}.
+1s [dp_acts|DBG] Executing action list.
+1s [dp_acts|DBG] executing action out{port="1"}.
+1s [dp_acts|DBG] action result: pkt{in="2", actset=[], pktout="0", ogrp="any", oprt="1", buffer="none", ns3pktid="6", changes="0", clone="0", std={proto={eth,ipv4,icmp}, match=oxm{in_port="2", metadata="0x0", eth_dst="00:00:00:00:00:01", eth_src="00:00:00:00:00:03", eth_type="0x800", ip_dscp="0", ip_ecn="0", ipv4_src="10.1.1.2", ipv4_dst="10.1.1.1", ip_proto="1", icmpv4_type= "0", icmpv4_code="0", tunnel_id="0x0"}"}}
+1s [dp_acts|DBG] Port action; sending to port (1).
+2s [pipeline|DBG] Datapath "1" processing packet: pkt{in="1", actset=[], pktout="0", ogrp="any", oprt="any", buffer="none", ns3pktid="7", changes="0", clone="0", std={proto={eth,ipv4,icmp}, match=oxm{in_port="1", metadata="0x0", eth_dst="00:00:00:00:00:03", eth_src="00:00:00:00:00:01", eth_type="0x800", ip_dscp="0", ip_ecn="0", ipv4_src="10.1.1.1", ipv4_dst="10.1.1.2", ip_proto="1", icmpv4_type= "8", icmpv4_code="0", tunnel_id="0x0"}"}}
+2s [pipeline|DBG] Datapath "1" trying table 0.
+2s [pipeline|DBG] Datapath "1" searching table entry for packet match: oxm{in_port="1", metadata="0x0", eth_dst="00:00:00:00:00:03", eth_src="00:00:00:00:00:01", eth_type="0x800", ip_dscp="0", ip_ecn="0", ipv4_src="10.1.1.1", ipv4_dst="10.1.1.2", ip_proto="1", icmpv4_type= "8", icmpv4_code="0", tunnel_id="0x0"}.
+2s [pipeline|DBG] Datapath "1" found matching entry: {table="0", match="oxm{eth_dst="00:00:00:00:00:03"}", dur_s="0", dur_ns="0", prio="102", idle_to="10", hard_to="0", cookie="0x0", pkt_cnt="2", byte_cnt="166", insts=[apply{acts=[out{port="2"}]}]}.
+2s [dp_acts|DBG] Executing action list.
+2s [dp_acts|DBG] executing action out{port="2"}.
+2s [dp_acts|DBG] action result: pkt{in="1", actset=[], pktout="0", ogrp="any", oprt="2", buffer="none", ns3pktid="7", changes="0", clone="0", std={proto={eth,ipv4,icmp}, match=oxm{in_port="1", metadata="0x0", eth_dst="00:00:00:00:00:03", eth_src="00:00:00:00:00:01", eth_type="0x800", ip_dscp="0", ip_ecn="0", ipv4_src="10.1.1.1", ipv4_dst="10.1.1.2", ip_proto="1", icmpv4_type= "8", icmpv4_code="0", tunnel_id="0x0"}"}}
+2s [dp_acts|DBG] Port action; sending to port (2).
+2s [pipeline|DBG] Datapath "1" processing packet: pkt{in="2", actset=[], pktout="0", ogrp="any", oprt="any", buffer="none", ns3pktid="8", changes="0", clone="0", std={proto={eth,ipv4,icmp}, match=oxm{in_port="2", metadata="0x0", eth_dst="00:00:00:00:00:01", eth_src="00:00:00:00:00:03", eth_type="0x800", ip_dscp="0", ip_ecn="0", ipv4_src="10.1.1.2", ipv4_dst="10.1.1.1", ip_proto="1", icmpv4_type= "0", icmpv4_code="0", tunnel_id="0x0"}"}}
+2s [pipeline|DBG] Datapath "1" trying table 0.
+2s [pipeline|DBG] Datapath "1" searching table entry for packet match: oxm{in_port="2", metadata="0x0", eth_dst="00:00:00:00:00:01", eth_src="00:00:00:00:00:03", eth_type="0x800", ip_dscp="0", ip_ecn="0", ipv4_src="10.1.1.2", ipv4_dst="10.1.1.1", ip_proto="1", icmpv4_type= "0", icmpv4_code="0", tunnel_id="0x0"}.
+2s [pipeline|DBG] Datapath "1" found matching entry: {table="0", match="oxm{eth_dst="00:00:00:00:00:01"}", dur_s="0", dur_ns="0", prio="101", idle_to="10", hard_to="0", cookie="0x0", pkt_cnt="3", byte_cnt="268", insts=[apply{acts=[out{port="1"}]}]}.
+2s [dp_acts|DBG] Executing action list.
+2s [dp_acts|DBG] executing action out{port="1"}.
+2s [dp_acts|DBG] action result: pkt{in="2", actset=[], pktout="0", ogrp="any", oprt="1", buffer="none", ns3pktid="8", changes="0", clone="0", std={proto={eth,ipv4,icmp}, match=oxm{in_port="2", metadata="0x0", eth_dst="00:00:00:00:00:01", eth_src="00:00:00:00:00:03", eth_type="0x800", ip_dscp="0", ip_ecn="0", ipv4_src="10.1.1.2", ipv4_dst="10.1.1.1", ip_proto="1", icmpv4_type= "0", icmpv4_code="0", tunnel_id="0x0"}"}}
+2s [dp_acts|DBG] Port action; sending to port (1).
+3s [pipeline|DBG] Datapath "1" processing packet: pkt{in="1", actset=[], pktout="0", ogrp="any", oprt="any", buffer="none", ns3pktid="9", changes="0", clone="0", std={proto={eth,ipv4,icmp}, match=oxm{in_port="1", metadata="0x0", eth_dst="00:00:00:00:00:03", eth_src="00:00:00:00:00:01", eth_type="0x800", ip_dscp="0", ip_ecn="0", ipv4_src="10.1.1.1", ipv4_dst="10.1.1.2", ip_proto="1", icmpv4_type= "8", icmpv4_code="0", tunnel_id="0x0"}"}}
+3s [pipeline|DBG] Datapath "1" trying table 0.
+3s [pipeline|DBG] Datapath "1" searching table entry for packet match: oxm{in_port="1", metadata="0x0", eth_dst="00:00:00:00:00:03", eth_src="00:00:00:00:00:01", eth_type="0x800", ip_dscp="0", ip_ecn="0", ipv4_src="10.1.1.1", ipv4_dst="10.1.1.2", ip_proto="1", icmpv4_type= "8", icmpv4_code="0", tunnel_id="0x0"}.
+3s [pipeline|DBG] Datapath "1" found matching entry: {table="0", match="oxm{eth_dst="00:00:00:00:00:03"}", dur_s="0", dur_ns="0", prio="102", idle_to="10", hard_to="0", cookie="0x0", pkt_cnt="3", byte_cnt="268", insts=[apply{acts=[out{port="2"}]}]}.
+3s [dp_acts|DBG] Executing action list.
+3s [dp_acts|DBG] executing action out{port="2"}.
+3s [dp_acts|DBG] action result: pkt{in="1", actset=[], pktout="0", ogrp="any", oprt="2", buffer="none", ns3pktid="9", changes="0", clone="0", std={proto={eth,ipv4,icmp}, match=oxm{in_port="1", metadata="0x0", eth_dst="00:00:00:00:00:03", eth_src="00:00:00:00:00:01", eth_type="0x800", ip_dscp="0", ip_ecn="0", ipv4_src="10.1.1.1", ipv4_dst="10.1.1.2", ip_proto="1", icmpv4_type= "8", icmpv4_code="0", tunnel_id="0x0"}"}}
+3s [dp_acts|DBG] Port action; sending to port (2).
+3s [pipeline|DBG] Datapath "1" processing packet: pkt{in="2", actset=[], pktout="0", ogrp="any", oprt="any", buffer="none", ns3pktid="10", changes="0", clone="0", std={proto={eth,ipv4,icmp}, match=oxm{in_port="2", metadata="0x0", eth_dst="00:00:00:00:00:01", eth_src="00:00:00:00:00:03", eth_type="0x800", ip_dscp="0", ip_ecn="0", ipv4_src="10.1.1.2", ipv4_dst="10.1.1.1", ip_proto="1", icmpv4_type= "0", icmpv4_code="0", tunnel_id="0x0"}"}}
+3s [pipeline|DBG] Datapath "1" trying table 0.
+3s [pipeline|DBG] Datapath "1" searching table entry for packet match: oxm{in_port="2", metadata="0x0", eth_dst="00:00:00:00:00:01", eth_src="00:00:00:00:00:03", eth_type="0x800", ip_dscp="0", ip_ecn="0", ipv4_src="10.1.1.2", ipv4_dst="10.1.1.1", ip_proto="1", icmpv4_type= "0", icmpv4_code="0", tunnel_id="0x0"}.
+3s [pipeline|DBG] Datapath "1" found matching entry: {table="0", match="oxm{eth_dst="00:00:00:00:00:01"}", dur_s="0", dur_ns="0", prio="101", idle_to="10", hard_to="0", cookie="0x0", pkt_cnt="4", byte_cnt="370", insts=[apply{acts=[out{port="1"}]}]}.
+3s [dp_acts|DBG] Executing action list.
+3s [dp_acts|DBG] executing action out{port="1"}.
+3s [dp_acts|DBG] action result: pkt{in="2", actset=[], pktout="0", ogrp="any", oprt="1", buffer="none", ns3pktid="10", changes="0", clone="0", std={proto={eth,ipv4,icmp}, match=oxm{in_port="2", metadata="0x0", eth_dst="00:00:00:00:00:01", eth_src="00:00:00:00:00:03", eth_type="0x800", ip_dscp="0", ip_ecn="0", ipv4_src="10.1.1.2", ipv4_dst="10.1.1.1", ip_proto="1", icmpv4_type= "0", icmpv4_code="0", tunnel_id="0x0"}"}}
+3s [dp_acts|DBG] Port action; sending to port (1).
+4s [pipeline|DBG] Datapath "1" processing packet: pkt{in="1", actset=[], pktout="0", ogrp="any", oprt="any", buffer="none", ns3pktid="11", changes="0", clone="0", std={proto={eth,ipv4,icmp}, match=oxm{in_port="1", metadata="0x0", eth_dst="00:00:00:00:00:03", eth_src="00:00:00:00:00:01", eth_type="0x800", ip_dscp="0", ip_ecn="0", ipv4_src="10.1.1.1", ipv4_dst="10.1.1.2", ip_proto="1", icmpv4_type= "8", icmpv4_code="0", tunnel_id="0x0"}"}}
+4s [pipeline|DBG] Datapath "1" trying table 0.
+4s [pipeline|DBG] Datapath "1" searching table entry for packet match: oxm{in_port="1", metadata="0x0", eth_dst="00:00:00:00:00:03", eth_src="00:00:00:00:00:01", eth_type="0x800", ip_dscp="0", ip_ecn="0", ipv4_src="10.1.1.1", ipv4_dst="10.1.1.2", ip_proto="1", icmpv4_type= "8", icmpv4_code="0", tunnel_id="0x0"}.
+4s [pipeline|DBG] Datapath "1" found matching entry: {table="0", match="oxm{eth_dst="00:00:00:00:00:03"}", dur_s="0", dur_ns="0", prio="102", idle_to="10", hard_to="0", cookie="0x0", pkt_cnt="4", byte_cnt="370", insts=[apply{acts=[out{port="2"}]}]}.
+4s [dp_acts|DBG] Executing action list.
+4s [dp_acts|DBG] executing action out{port="2"}.
+4s [dp_acts|DBG] action result: pkt{in="1", actset=[], pktout="0", ogrp="any", oprt="2", buffer="none", ns3pktid="11", changes="0", clone="0", std={proto={eth,ipv4,icmp}, match=oxm{in_port="1", metadata="0x0", eth_dst="00:00:00:00:00:03", eth_src="00:00:00:00:00:01", eth_type="0x800", ip_dscp="0", ip_ecn="0", ipv4_src="10.1.1.1", ipv4_dst="10.1.1.2", ip_proto="1", icmpv4_type= "8", icmpv4_code="0", tunnel_id="0x0"}"}}
+4s [dp_acts|DBG] Port action; sending to port (2).
+4s [pipeline|DBG] Datapath "1" processing packet: pkt{in="2", actset=[], pktout="0", ogrp="any", oprt="any", buffer="none", ns3pktid="12", changes="0", clone="0", std={proto={eth,ipv4,icmp}, match=oxm{in_port="2", metadata="0x0", eth_dst="00:00:00:00:00:01", eth_src="00:00:00:00:00:03", eth_type="0x800", ip_dscp="0", ip_ecn="0", ipv4_src="10.1.1.2", ipv4_dst="10.1.1.1", ip_proto="1", icmpv4_type= "0", icmpv4_code="0", tunnel_id="0x0"}"}}
+4s [pipeline|DBG] Datapath "1" trying table 0.
+4s [pipeline|DBG] Datapath "1" searching table entry for packet match: oxm{in_port="2", metadata="0x0", eth_dst="00:00:00:00:00:01", eth_src="00:00:00:00:00:03", eth_type="0x800", ip_dscp="0", ip_ecn="0", ipv4_src="10.1.1.2", ipv4_dst="10.1.1.1", ip_proto="1", icmpv4_type= "0", icmpv4_code="0", tunnel_id="0x0"}.
+4s [pipeline|DBG] Datapath "1" found matching entry: {table="0", match="oxm{eth_dst="00:00:00:00:00:01"}", dur_s="0", dur_ns="0", prio="101", idle_to="10", hard_to="0", cookie="0x0", pkt_cnt="5", byte_cnt="472", insts=[apply{acts=[out{port="1"}]}]}.
+4s [dp_acts|DBG] Executing action list.
+4s [dp_acts|DBG] executing action out{port="1"}.
+4s [dp_acts|DBG] action result: pkt{in="2", actset=[], pktout="0", ogrp="any", oprt="1", buffer="none", ns3pktid="12", changes="0", clone="0", std={proto={eth,ipv4,icmp}, match=oxm{in_port="2", metadata="0x0", eth_dst="00:00:00:00:00:01", eth_src="00:00:00:00:00:03", eth_type="0x800", ip_dscp="0", ip_ecn="0", ipv4_src="10.1.1.2", ipv4_dst="10.1.1.1", ip_proto="1", icmpv4_type= "0", icmpv4_code="0", tunnel_id="0x0"}"}}
+4s [dp_acts|DBG] Port action; sending to port (1).
+5s [pipeline|DBG] Datapath "1" processing packet: pkt{in="1", actset=[], pktout="0", ogrp="any", oprt="any", buffer="none", ns3pktid="13", changes="0", clone="0", std={proto={eth,ipv4,icmp}, match=oxm{in_port="1", metadata="0x0", eth_dst="00:00:00:00:00:03", eth_src="00:00:00:00:00:01", eth_type="0x800", ip_dscp="0", ip_ecn="0", ipv4_src="10.1.1.1", ipv4_dst="10.1.1.2", ip_proto="1", icmpv4_type= "8", icmpv4_code="0", tunnel_id="0x0"}"}}
+5s [pipeline|DBG] Datapath "1" trying table 0.
+5s [pipeline|DBG] Datapath "1" searching table entry for packet match: oxm{in_port="1", metadata="0x0", eth_dst="00:00:00:00:00:03", eth_src="00:00:00:00:00:01", eth_type="0x800", ip_dscp="0", ip_ecn="0", ipv4_src="10.1.1.1", ipv4_dst="10.1.1.2", ip_proto="1", icmpv4_type= "8", icmpv4_code="0", tunnel_id="0x0"}.
+5s [pipeline|DBG] Datapath "1" found matching entry: {table="0", match="oxm{eth_dst="00:00:00:00:00:03"}", dur_s="0", dur_ns="0", prio="102", idle_to="10", hard_to="0", cookie="0x0", pkt_cnt="5", byte_cnt="472", insts=[apply{acts=[out{port="2"}]}]}.
+5s [dp_acts|DBG] Executing action list.
+5s [dp_acts|DBG] executing action out{port="2"}.
+5s [dp_acts|DBG] action result: pkt{in="1", actset=[], pktout="0", ogrp="any", oprt="2", buffer="none", ns3pktid="13", changes="0", clone="0", std={proto={eth,ipv4,icmp}, match=oxm{in_port="1", metadata="0x0", eth_dst="00:00:00:00:00:03", eth_src="00:00:00:00:00:01", eth_type="0x800", ip_dscp="0", ip_ecn="0", ipv4_src="10.1.1.1", ipv4_dst="10.1.1.2", ip_proto="1", icmpv4_type= "8", icmpv4_code="0", tunnel_id="0x0"}"}}
+5s [dp_acts|DBG] Port action; sending to port (2).
+5s [pipeline|DBG] Datapath "1" processing packet: pkt{in="2", actset=[], pktout="0", ogrp="any", oprt="any", buffer="none", ns3pktid="14", changes="0", clone="0", std={proto={eth,ipv4,icmp}, match=oxm{in_port="2", metadata="0x0", eth_dst="00:00:00:00:00:01", eth_src="00:00:00:00:00:03", eth_type="0x800", ip_dscp="0", ip_ecn="0", ipv4_src="10.1.1.2", ipv4_dst="10.1.1.1", ip_proto="1", icmpv4_type= "0", icmpv4_code="0", tunnel_id="0x0"}"}}
+5s [pipeline|DBG] Datapath "1" trying table 0.
+5s [pipeline|DBG] Datapath "1" searching table entry for packet match: oxm{in_port="2", metadata="0x0", eth_dst="00:00:00:00:00:01", eth_src="00:00:00:00:00:03", eth_type="0x800", ip_dscp="0", ip_ecn="0", ipv4_src="10.1.1.2", ipv4_dst="10.1.1.1", ip_proto="1", icmpv4_type= "0", icmpv4_code="0", tunnel_id="0x0"}.
+5s [pipeline|DBG] Datapath "1" found matching entry: {table="0", match="oxm{eth_dst="00:00:00:00:00:01"}", dur_s="0", dur_ns="0", prio="101", idle_to="10", hard_to="0", cookie="0x0", pkt_cnt="6", byte_cnt="574", insts=[apply{acts=[out{port="1"}]}]}.
+5s [dp_acts|DBG] Executing action list.
+5s [dp_acts|DBG] executing action out{port="1"}.
+5s [dp_acts|DBG] action result: pkt{in="2", actset=[], pktout="0", ogrp="any", oprt="1", buffer="none", ns3pktid="14", changes="0", clone="0", std={proto={eth,ipv4,icmp}, match=oxm{in_port="2", metadata="0x0", eth_dst="00:00:00:00:00:01", eth_src="00:00:00:00:00:03", eth_type="0x800", ip_dscp="0", ip_ecn="0", ipv4_src="10.1.1.2", ipv4_dst="10.1.1.1", ip_proto="1", icmpv4_type= "0", icmpv4_code="0", tunnel_id="0x0"}"}}
+5s [dp_acts|DBG] Port action; sending to port (1).
+6s [pipeline|DBG] Datapath "1" processing packet: pkt{in="1", actset=[], pktout="0", ogrp="any", oprt="any", buffer="none", ns3pktid="15", changes="0", clone="0", std={proto={eth,ipv4,icmp}, match=oxm{in_port="1", metadata="0x0", eth_dst="00:00:00:00:00:03", eth_src="00:00:00:00:00:01", eth_type="0x800", ip_dscp="0", ip_ecn="0", ipv4_src="10.1.1.1", ipv4_dst="10.1.1.2", ip_proto="1", icmpv4_type= "8", icmpv4_code="0", tunnel_id="0x0"}"}}
+6s [pipeline|DBG] Datapath "1" trying table 0.
+6s [pipeline|DBG] Datapath "1" searching table entry for packet match: oxm{in_port="1", metadata="0x0", eth_dst="00:00:00:00:00:03", eth_src="00:00:00:00:00:01", eth_type="0x800", ip_dscp="0", ip_ecn="0", ipv4_src="10.1.1.1", ipv4_dst="10.1.1.2", ip_proto="1", icmpv4_type= "8", icmpv4_code="0", tunnel_id="0x0"}.
+6s [pipeline|DBG] Datapath "1" found matching entry: {table="0", match="oxm{eth_dst="00:00:00:00:00:03"}", dur_s="0", dur_ns="0", prio="102", idle_to="10", hard_to="0", cookie="0x0", pkt_cnt="6", byte_cnt="574", insts=[apply{acts=[out{port="2"}]}]}.
+6s [dp_acts|DBG] Executing action list.
+6s [dp_acts|DBG] executing action out{port="2"}.
+6s [dp_acts|DBG] action result: pkt{in="1", actset=[], pktout="0", ogrp="any", oprt="2", buffer="none", ns3pktid="15", changes="0", clone="0", std={proto={eth,ipv4,icmp}, match=oxm{in_port="1", metadata="0x0", eth_dst="00:00:00:00:00:03", eth_src="00:00:00:00:00:01", eth_type="0x800", ip_dscp="0", ip_ecn="0", ipv4_src="10.1.1.1", ipv4_dst="10.1.1.2", ip_proto="1", icmpv4_type= "8", icmpv4_code="0", tunnel_id="0x0"}"}}
+6s [dp_acts|DBG] Port action; sending to port (2).
+6s [pipeline|DBG] Datapath "1" processing packet: pkt{in="2", actset=[], pktout="0", ogrp="any", oprt="any", buffer="none", ns3pktid="16", changes="0", clone="0", std={proto={eth,ipv4,icmp}, match=oxm{in_port="2", metadata="0x0", eth_dst="00:00:00:00:00:01", eth_src="00:00:00:00:00:03", eth_type="0x800", ip_dscp="0", ip_ecn="0", ipv4_src="10.1.1.2", ipv4_dst="10.1.1.1", ip_proto="1", icmpv4_type= "0", icmpv4_code="0", tunnel_id="0x0"}"}}
+6s [pipeline|DBG] Datapath "1" trying table 0.
+6s [pipeline|DBG] Datapath "1" searching table entry for packet match: oxm{in_port="2", metadata="0x0", eth_dst="00:00:00:00:00:01", eth_src="00:00:00:00:00:03", eth_type="0x800", ip_dscp="0", ip_ecn="0", ipv4_src="10.1.1.2", ipv4_dst="10.1.1.1", ip_proto="1", icmpv4_type= "0", icmpv4_code="0", tunnel_id="0x0"}.
+6s [pipeline|DBG] Datapath "1" found matching entry: {table="0", match="oxm{eth_dst="00:00:00:00:00:01"}", dur_s="0", dur_ns="0", prio="101", idle_to="10", hard_to="0", cookie="0x0", pkt_cnt="7", byte_cnt="676", insts=[apply{acts=[out{port="1"}]}]}.
+6s [dp_acts|DBG] Executing action list.
+6s [dp_acts|DBG] executing action out{port="1"}.
+6s [dp_acts|DBG] action result: pkt{in="2", actset=[], pktout="0", ogrp="any", oprt="1", buffer="none", ns3pktid="16", changes="0", clone="0", std={proto={eth,ipv4,icmp}, match=oxm{in_port="2", metadata="0x0", eth_dst="00:00:00:00:00:01", eth_src="00:00:00:00:00:03", eth_type="0x800", ip_dscp="0", ip_ecn="0", ipv4_src="10.1.1.2", ipv4_dst="10.1.1.1", ip_proto="1", icmpv4_type= "0", icmpv4_code="0", tunnel_id="0x0"}"}}
+6s [dp_acts|DBG] Port action; sending to port (1).
+7s [pipeline|DBG] Datapath "1" processing packet: pkt{in="1", actset=[], pktout="0", ogrp="any", oprt="any", buffer="none", ns3pktid="17", changes="0", clone="0", std={proto={eth,ipv4,icmp}, match=oxm{in_port="1", metadata="0x0", eth_dst="00:00:00:00:00:03", eth_src="00:00:00:00:00:01", eth_type="0x800", ip_dscp="0", ip_ecn="0", ipv4_src="10.1.1.1", ipv4_dst="10.1.1.2", ip_proto="1", icmpv4_type= "8", icmpv4_code="0", tunnel_id="0x0"}"}}
+7s [pipeline|DBG] Datapath "1" trying table 0.
+7s [pipeline|DBG] Datapath "1" searching table entry for packet match: oxm{in_port="1", metadata="0x0", eth_dst="00:00:00:00:00:03", eth_src="00:00:00:00:00:01", eth_type="0x800", ip_dscp="0", ip_ecn="0", ipv4_src="10.1.1.1", ipv4_dst="10.1.1.2", ip_proto="1", icmpv4_type= "8", icmpv4_code="0", tunnel_id="0x0"}.
+7s [pipeline|DBG] Datapath "1" found matching entry: {table="0", match="oxm{eth_dst="00:00:00:00:00:03"}", dur_s="0", dur_ns="0", prio="102", idle_to="10", hard_to="0", cookie="0x0", pkt_cnt="7", byte_cnt="676", insts=[apply{acts=[out{port="2"}]}]}.
+7s [dp_acts|DBG] Executing action list.
+7s [dp_acts|DBG] executing action out{port="2"}.
+7s [dp_acts|DBG] action result: pkt{in="1", actset=[], pktout="0", ogrp="any", oprt="2", buffer="none", ns3pktid="17", changes="0", clone="0", std={proto={eth,ipv4,icmp}, match=oxm{in_port="1", metadata="0x0", eth_dst="00:00:00:00:00:03", eth_src="00:00:00:00:00:01", eth_type="0x800", ip_dscp="0", ip_ecn="0", ipv4_src="10.1.1.1", ipv4_dst="10.1.1.2", ip_proto="1", icmpv4_type= "8", icmpv4_code="0", tunnel_id="0x0"}"}}
+7s [dp_acts|DBG] Port action; sending to port (2).
+7s [pipeline|DBG] Datapath "1" processing packet: pkt{in="2", actset=[], pktout="0", ogrp="any", oprt="any", buffer="none", ns3pktid="18", changes="0", clone="0", std={proto={eth,ipv4,icmp}, match=oxm{in_port="2", metadata="0x0", eth_dst="00:00:00:00:00:01", eth_src="00:00:00:00:00:03", eth_type="0x800", ip_dscp="0", ip_ecn="0", ipv4_src="10.1.1.2", ipv4_dst="10.1.1.1", ip_proto="1", icmpv4_type= "0", icmpv4_code="0", tunnel_id="0x0"}"}}
+7s [pipeline|DBG] Datapath "1" trying table 0.
+7s [pipeline|DBG] Datapath "1" searching table entry for packet match: oxm{in_port="2", metadata="0x0", eth_dst="00:00:00:00:00:01", eth_src="00:00:00:00:00:03", eth_type="0x800", ip_dscp="0", ip_ecn="0", ipv4_src="10.1.1.2", ipv4_dst="10.1.1.1", ip_proto="1", icmpv4_type= "0", icmpv4_code="0", tunnel_id="0x0"}.
+7s [pipeline|DBG] Datapath "1" found matching entry: {table="0", match="oxm{eth_dst="00:00:00:00:00:01"}", dur_s="0", dur_ns="0", prio="101", idle_to="10", hard_to="0", cookie="0x0", pkt_cnt="8", byte_cnt="778", insts=[apply{acts=[out{port="1"}]}]}.
+7s [dp_acts|DBG] Executing action list.
+7s [dp_acts|DBG] executing action out{port="1"}.
+7s [dp_acts|DBG] action result: pkt{in="2", actset=[], pktout="0", ogrp="any", oprt="1", buffer="none", ns3pktid="18", changes="0", clone="0", std={proto={eth,ipv4,icmp}, match=oxm{in_port="2", metadata="0x0", eth_dst="00:00:00:00:00:01", eth_src="00:00:00:00:00:03", eth_type="0x800", ip_dscp="0", ip_ecn="0", ipv4_src="10.1.1.2", ipv4_dst="10.1.1.1", ip_proto="1", icmpv4_type= "0", icmpv4_code="0", tunnel_id="0x0"}"}}
+7s [dp_acts|DBG] Port action; sending to port (1).
+8s [pipeline|DBG] Datapath "1" processing packet: pkt{in="1", actset=[], pktout="0", ogrp="any", oprt="any", buffer="none", ns3pktid="19", changes="0", clone="0", std={proto={eth,ipv4,icmp}, match=oxm{in_port="1", metadata="0x0", eth_dst="00:00:00:00:00:03", eth_src="00:00:00:00:00:01", eth_type="0x800", ip_dscp="0", ip_ecn="0", ipv4_src="10.1.1.1", ipv4_dst="10.1.1.2", ip_proto="1", icmpv4_type= "8", icmpv4_code="0", tunnel_id="0x0"}"}}
+8s [pipeline|DBG] Datapath "1" trying table 0.
+8s [pipeline|DBG] Datapath "1" searching table entry for packet match: oxm{in_port="1", metadata="0x0", eth_dst="00:00:00:00:00:03", eth_src="00:00:00:00:00:01", eth_type="0x800", ip_dscp="0", ip_ecn="0", ipv4_src="10.1.1.1", ipv4_dst="10.1.1.2", ip_proto="1", icmpv4_type= "8", icmpv4_code="0", tunnel_id="0x0"}.
+8s [pipeline|DBG] Datapath "1" found matching entry: {table="0", match="oxm{eth_dst="00:00:00:00:00:03"}", dur_s="0", dur_ns="0", prio="102", idle_to="10", hard_to="0", cookie="0x0", pkt_cnt="8", byte_cnt="778", insts=[apply{acts=[out{port="2"}]}]}.
+8s [dp_acts|DBG] Executing action list.
+8s [dp_acts|DBG] executing action out{port="2"}.
+8s [dp_acts|DBG] action result: pkt{in="1", actset=[], pktout="0", ogrp="any", oprt="2", buffer="none", ns3pktid="19", changes="0", clone="0", std={proto={eth,ipv4,icmp}, match=oxm{in_port="1", metadata="0x0", eth_dst="00:00:00:00:00:03", eth_src="00:00:00:00:00:01", eth_type="0x800", ip_dscp="0", ip_ecn="0", ipv4_src="10.1.1.1", ipv4_dst="10.1.1.2", ip_proto="1", icmpv4_type= "8", icmpv4_code="0", tunnel_id="0x0"}"}}
+8s [dp_acts|DBG] Port action; sending to port (2).
+8s [pipeline|DBG] Datapath "1" processing packet: pkt{in="2", actset=[], pktout="0", ogrp="any", oprt="any", buffer="none", ns3pktid="20", changes="0", clone="0", std={proto={eth,ipv4,icmp}, match=oxm{in_port="2", metadata="0x0", eth_dst="00:00:00:00:00:01", eth_src="00:00:00:00:00:03", eth_type="0x800", ip_dscp="0", ip_ecn="0", ipv4_src="10.1.1.2", ipv4_dst="10.1.1.1", ip_proto="1", icmpv4_type= "0", icmpv4_code="0", tunnel_id="0x0"}"}}
+8s [pipeline|DBG] Datapath "1" trying table 0.
+8s [pipeline|DBG] Datapath "1" searching table entry for packet match: oxm{in_port="2", metadata="0x0", eth_dst="00:00:00:00:00:01", eth_src="00:00:00:00:00:03", eth_type="0x800", ip_dscp="0", ip_ecn="0", ipv4_src="10.1.1.2", ipv4_dst="10.1.1.1", ip_proto="1", icmpv4_type= "0", icmpv4_code="0", tunnel_id="0x0"}.
+8s [pipeline|DBG] Datapath "1" found matching entry: {table="0", match="oxm{eth_dst="00:00:00:00:00:01"}", dur_s="0", dur_ns="0", prio="101", idle_to="10", hard_to="0", cookie="0x0", pkt_cnt="9", byte_cnt="880", insts=[apply{acts=[out{port="1"}]}]}.
+8s [dp_acts|DBG] Executing action list.
+8s [dp_acts|DBG] executing action out{port="1"}.
+8s [dp_acts|DBG] action result: pkt{in="2", actset=[], pktout="0", ogrp="any", oprt="1", buffer="none", ns3pktid="20", changes="0", clone="0", std={proto={eth,ipv4,icmp}, match=oxm{in_port="2", metadata="0x0", eth_dst="00:00:00:00:00:01", eth_src="00:00:00:00:00:03", eth_type="0x800", ip_dscp="0", ip_ecn="0", ipv4_src="10.1.1.2", ipv4_dst="10.1.1.1", ip_proto="1", icmpv4_type= "0", icmpv4_code="0", tunnel_id="0x0"}"}}
+8s [dp_acts|DBG] Port action; sending to port (1).
+9s [pipeline|DBG] Datapath "1" processing packet: pkt{in="1", actset=[], pktout="0", ogrp="any", oprt="any", buffer="none", ns3pktid="21", changes="0", clone="0", std={proto={eth,ipv4,icmp}, match=oxm{in_port="1", metadata="0x0", eth_dst="00:00:00:00:00:03", eth_src="00:00:00:00:00:01", eth_type="0x800", ip_dscp="0", ip_ecn="0", ipv4_src="10.1.1.1", ipv4_dst="10.1.1.2", ip_proto="1", icmpv4_type= "8", icmpv4_code="0", tunnel_id="0x0"}"}}
+9s [pipeline|DBG] Datapath "1" trying table 0.
+9s [pipeline|DBG] Datapath "1" searching table entry for packet match: oxm{in_port="1", metadata="0x0", eth_dst="00:00:00:00:00:03", eth_src="00:00:00:00:00:01", eth_type="0x800", ip_dscp="0", ip_ecn="0", ipv4_src="10.1.1.1", ipv4_dst="10.1.1.2", ip_proto="1", icmpv4_type= "8", icmpv4_code="0", tunnel_id="0x0"}.
+9s [pipeline|DBG] Datapath "1" found matching entry: {table="0", match="oxm{eth_dst="00:00:00:00:00:03"}", dur_s="0", dur_ns="0", prio="102", idle_to="10", hard_to="0", cookie="0x0", pkt_cnt="9", byte_cnt="880", insts=[apply{acts=[out{port="2"}]}]}.
+9s [dp_acts|DBG] Executing action list.
+9s [dp_acts|DBG] executing action out{port="2"}.
+9s [dp_acts|DBG] action result: pkt{in="1", actset=[], pktout="0", ogrp="any", oprt="2", buffer="none", ns3pktid="21", changes="0", clone="0", std={proto={eth,ipv4,icmp}, match=oxm{in_port="1", metadata="0x0", eth_dst="00:00:00:00:00:03", eth_src="00:00:00:00:00:01", eth_type="0x800", ip_dscp="0", ip_ecn="0", ipv4_src="10.1.1.1", ipv4_dst="10.1.1.2", ip_proto="1", icmpv4_type= "8", icmpv4_code="0", tunnel_id="0x0"}"}}
+9s [dp_acts|DBG] Port action; sending to port (2).
+9s [pipeline|DBG] Datapath "1" processing packet: pkt{in="2", actset=[], pktout="0", ogrp="any", oprt="any", buffer="none", ns3pktid="22", changes="0", clone="0", std={proto={eth,ipv4,icmp}, match=oxm{in_port="2", metadata="0x0", eth_dst="00:00:00:00:00:01", eth_src="00:00:00:00:00:03", eth_type="0x800", ip_dscp="0", ip_ecn="0", ipv4_src="10.1.1.2", ipv4_dst="10.1.1.1", ip_proto="1", icmpv4_type= "0", icmpv4_code="0", tunnel_id="0x0"}"}}
+9s [pipeline|DBG] Datapath "1" trying table 0.
+9s [pipeline|DBG] Datapath "1" searching table entry for packet match: oxm{in_port="2", metadata="0x0", eth_dst="00:00:00:00:00:01", eth_src="00:00:00:00:00:03", eth_type="0x800", ip_dscp="0", ip_ecn="0", ipv4_src="10.1.1.2", ipv4_dst="10.1.1.1", ip_proto="1", icmpv4_type= "0", icmpv4_code="0", tunnel_id="0x0"}.
+9s [pipeline|DBG] Datapath "1" found matching entry: {table="0", match="oxm{eth_dst="00:00:00:00:00:01"}", dur_s="0", dur_ns="0", prio="101", idle_to="10", hard_to="0", cookie="0x0", pkt_cnt="10", byte_cnt="982", insts=[apply{acts=[out{port="1"}]}]}.
+9s [dp_acts|DBG] Executing action list.
+9s [dp_acts|DBG] executing action out{port="1"}.
+9s [dp_acts|DBG] action result: pkt{in="2", actset=[], pktout="0", ogrp="any", oprt="1", buffer="none", ns3pktid="22", changes="0", clone="0", std={proto={eth,ipv4,icmp}, match=oxm{in_port="2", metadata="0x0", eth_dst="00:00:00:00:00:01", eth_src="00:00:00:00:00:03", eth_type="0x800", ip_dscp="0", ip_ecn="0", ipv4_src="10.1.1.2", ipv4_dst="10.1.1.1", ip_proto="1", icmpv4_type= "0", icmpv4_code="0", tunnel_id="0x0"}"}}
+9s [dp_acts|DBG] Port action; sending to port (1).
